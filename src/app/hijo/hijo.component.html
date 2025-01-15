@@ -1,0 +1,10 @@
+<p>El hijo del componente</p>
+
+<p>{{ recibeHijo }}</p>
+
+
+<!-- Mandar un mansaje del hijo al padre -->
+
+<label for="mensajeHijo">Escribe el mensaje</label>
+<input type="text" name="mensajeHijo" [(ngModel)]="mensaje" />
+<button (click)="enviarMensaje()">Enviar mensaje</button>

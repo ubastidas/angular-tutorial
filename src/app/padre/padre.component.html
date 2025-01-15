@@ -1,0 +1,9 @@
+<div>Contador</div>
+<p>Número: {{ numberCount }}</p>
+<button (click)="incrementNumber()">Incrementar</button>
+<button (click)="decrementNumber()">Decrementar</button>
+<app-hijo [recibeHijo]="mensajePadre" (mensajeDesdeHijo)="recibirMensaje($event)"></app-hijo>
+
+<hr>
+
+<p>Mensaje recibido del hijo es: {{ mensajeRecibido }}</p>
