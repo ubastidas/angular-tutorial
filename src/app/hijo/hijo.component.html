@@ -1,10 +1,11 @@
-<p>El hijo del componente</p>
+<button type="button" (click)="sendIncrementar()">+</button>
+<button type="button" (click)="sendDecrementar()">-</button>
+<br/><br/>
 
-<p>{{ recibeHijo }}</p>
+El mensaje desde el padre es: {{ mensajeDesdePadre }}
 
-
-<!-- Mandar un mansaje del hijo al padre -->
-
-<label for="mensajeHijo">Escribe el mensaje</label>
-<input type="text" name="mensajeHijo" [(ngModel)]="mensaje" />
-<button (click)="enviarMensaje()">Enviar mensaje</button>
+<div>
+  <label for="entrada" >El mensaje a mandar es:</label>
+  <input type="text" id="entrada" [(ngModel)]="mensaje" />
+  <button type="button" (click)="sendMessage()">Enviar mensaje a Padre</button>
+</div>

@@ -7,11 +7,23 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class HijoComponent {
 
-  @Input() recibeHijo?: string; //el interrogaciónes para que sepa que el mensage puede llegar a ser vacío.
-  @Output() mensajeDesdeHijo = new EventEmitter<string>();
-  mensaje: string = "";
+  @Input() mensajeDesdePadre?: string;
+  @Output() mansajeDesdeHijo = new EventEmitter<string>();
+  @Output() incrementar = new EventEmitter<void>();
+  @Output() decrementar = new EventEmitter<void>();
 
-  enviarMensaje(){
-    this.mensajeDesdeHijo.emit(this.mensaje);
+  mensaje: string = '';
+
+  sendMessage() {
+    this.mansajeDesdeHijo.emit(this.mensaje);
   }
+
+  sendIncrementar() {
+    this.incrementar.emit();
+  }
+
+  sendDecrementar() {
+    this.decrementar.emit();
+  }
+
 }

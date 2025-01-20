@@ -1,9 +1,18 @@
-<div>Contador</div>
-<p>Número: {{ numberCount }}</p>
-<button (click)="incrementNumber()">Incrementar</button>
-<button (click)="decrementNumber()">Decrementar</button>
-<app-hijo [recibeHijo]="mensajePadre" (mensajeDesdeHijo)="recibirMensaje($event)"></app-hijo>
+<h1>Contador</h1>
+<div>
+  <p>Contador: <span id="contador">{{ valorContador }}</span></p>
+</div>
+<app-hijo
+[mensajeDesdePadre]="mensaje"
+(mansajeDesdeHijo)="recibirMensaje($event)"
+(incrementar)="incrementar()"
+(decrementar)="decrementar()"
+/>
+
+<h3 appEstiloHermanos>Mensaje recibido desde hijo: <span style="color:red;">{{ mensajeRecibido }}</span></h3>
 
 <hr>
-
-<p>Mensaje recibido del hijo es: {{ mensajeRecibido }}</p>
+<h3>{{ nombre | myPipePersonalizado }}</h3>
+<button type="button" (click)="saludar()">Saludar</button>
+<button type="button" (click)="preguntar()">Preguntar por hijo</button>
+<hr>
